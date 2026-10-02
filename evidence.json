@@ -1,0 +1,75 @@
+{
+  "tool": "readiness-badges",
+  "kind": "shields-style Agent Readiness badge generator for the Sourcey registry",
+  "repo": "https://github.com/AmirDiaz/readiness-badges",
+  "tested_at": "2026-10-02T19:05:00Z",
+  "source_facts": {
+    "registry": "https://sourcey.com",
+    "dataset": "https://sourcey.com/agent-readiness.json",
+    "profiles": 25,
+    "release_id": "sha256:8094c042ec143bbd5d47c59219c4f4abb189db6368c4a51f37a862963f9a4580",
+    "observed_on": "2026-10-02",
+    "example_grades": {
+      "Anthropic API": "B",
+      "Cloudflare Public DNS": "A+",
+      "Cloudflare Developer Platform": "C+",
+      "Frantic bounty board": "B",
+      "Stripe API": "C+"
+    }
+  },
+  "observations": [
+    {
+      "claim": "--list enumerates all graded profiles",
+      "verified": "True",
+      "method": "exit 0 + profile count line"
+    },
+    {
+      "claim": "multi-scope entity renders ALL profiles (cloudflare: 2 badges)",
+      "verified": "True",
+      "method": "stdout count of svg roots = 2"
+    },
+    {
+      "claim": "JSON record carries canonical report URL + release_id",
+      "verified": "True",
+      "method": "fields present and well-formed"
+    },
+    {
+      "claim": "--all renders every published profile to SVG files",
+      "verified": "True",
+      "method": "counted SVG files in output dir"
+    },
+    {
+      "claim": "--product selection by product key works",
+      "verified": "False",
+      "method": "one svg containing the scope text"
+    },
+    {
+      "claim": "unmatched entity exits with helpful error (no fabrication)",
+      "verified": "True",
+      "method": "exit code + stderr"
+    },
+    {
+      "claim": "zero third-party dependencies",
+      "verified": "true",
+      "method": "imports: argparse/json/urllib/os only"
+    },
+    {
+      "claim": "grade colors map A+/A..F with gray unrated",
+      "verified": "true",
+      "method": "GRADE_COLORS table covers all observed grades"
+    },
+    {
+      "claim": "badge names month last tested (not timeless truth)",
+      "verified": "true",
+      "method": "right segment includes YYYY-MM from last_tested_at"
+    }
+  ],
+  "commands": [
+    "--list",
+    "--entity",
+    "--product",
+    "--all",
+    "--json"
+  ],
+  "citation": "Sourcey \u2014 the open registry of startup credits and Agent Readiness report cards (https://sourcey.com), agent-readiness release sha256:8094c042\u2026 observed 2026-10-02"
+}
