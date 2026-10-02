@@ -71,5 +71,6 @@
     "--all",
     "--json"
   ],
-  "citation": "Sourcey \u2014 the open registry of startup credits and Agent Readiness report cards (https://sourcey.com), agent-readiness release sha256:8094c042\u2026 observed 2026-10-02"
+  "citation": "Sourcey \u2014 the open registry of startup credits and Agent Readiness report cards (https://sourcey.com), agent-readiness release sha256:8094c042\u2026 observed 2026-10-02",
+  "summary": "readiness-badges v1.0 delivered and live-tested on 2026-10-02: a zero-dependency Python CLI that renders shields-style SVG badges from Sourcey's public Agent Readiness report cards (25 published profiles as of release sha256:8094c042, observed 2026-10-02). Badges name the product scope and month last tested; JSON records carry the canonical report URL and the exact dataset release_id, so every badge is a verifiable citation rather than a timeless sticker. Multi-scope entities render every published profile, and unmatched entities fail loudly instead of guessing grades."
 }
